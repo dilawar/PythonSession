@@ -10,7 +10,7 @@ __maintainer__       = "Dilawar Singh"
 __email__            = "dilawars@ncbs.res.in"
 __status__           = "Development"
 
-
+import sys
 import pandas
 import matplotlib as mpl
 # mpl.use( 'pgf' )
@@ -19,7 +19,7 @@ mpl.style.use( ['bmh', 'fivethirtyeight'] )
 
 def read_data(filename):
     df = pandas.read_csv(filename)
-    df = df.drop(columns=['Party Name', 'Candidate Name', 'Name of State/ UT'])
+    #  df = df.drop(columns=['Party Name', 'Candidate Name', 'Name of State/ UT'])
     constituencies = set(df['Parliamentary Constituency'])
     print( f"[INFO ] Total {len(constituencies)} constituencies." )
     slices = []
@@ -69,14 +69,13 @@ def process(df):
             , density=True
             , lw=2, label ='1st+2nd Loser')
     ax3.legend()
-    plt.suptitle('LOK-SABHA ELECTION 2014')
     plt.tight_layout(rect=(0,0,1,0.95))
-    plt.savefig( 'ls-2014.png' )
 
 def main():
-    filename = './LS-2014_ElectionResult.csv'
+    filename = sys.argv[1]
     df = read_data(filename)
     process(df)
+    plt.savefig(f"{filename}.png")
 
 if __name__ == '__main__':
     main()
