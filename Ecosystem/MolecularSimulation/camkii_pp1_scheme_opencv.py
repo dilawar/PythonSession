@@ -76,7 +76,7 @@ def make_system( arg = None ):
 def step( i ):
     [ x.step() for x in arena.pp1_ + arena.camkii_ + arena.subunits_ ]
     if i % 100 == 0:
-        visualize_system(i, 1 )
+        visualize_system(i, 1)
 
 def simuate(N):
     while N != 0:
