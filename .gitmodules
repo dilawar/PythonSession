@@ -1,0 +1,3 @@
+[submodule "Ecosystem/ScrapData/GreenWatchData"]
+	path = Ecosystem/ScrapData/GreenWatchData
+	url = https://github.com/dilawar/GreenWatchData
