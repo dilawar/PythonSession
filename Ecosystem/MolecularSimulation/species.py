@@ -132,9 +132,9 @@ class PP1():
     def draw(self, img):
         t = 'p'
         if self.active:
-            cv2.putText(img, t, (self.y,self.x), 0, 0.5, (255,0,0))
+            cv2.putText(img, t, (self.y,self.x), 0, 0.5, (255,0,0), 2)
         else:
-            cv2.putText(img, t, (self.y, self.x), 0, 0.5, (100,0,0))
+            cv2.putText(img, t, (self.y, self.x), 0, 0.5, (100,0,0), 2)
 
     def step(self):
         if self.move:
