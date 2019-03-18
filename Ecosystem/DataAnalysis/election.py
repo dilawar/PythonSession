@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """election_poisson.py: 
 """
     
@@ -76,6 +77,8 @@ def main():
     df = read_data(filename)
     process(df)
     plt.savefig(f"{filename}.png")
+    plt.show()
+    plt.close()
 
 if __name__ == '__main__':
     main()
